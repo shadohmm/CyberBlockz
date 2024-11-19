@@ -1,0 +1,38 @@
+<div
+  class="bg-[#112240] rounded-xl overflow-hidden border border-blue-900/40 hover:border-blue-500/40 transition group hover:transform hover:scale-[1.02]"
+>
+  <div class="aspect-video relative overflow-hidden">
+    <img
+      [src]="course.image"
+      [alt]="course.title"
+      class="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+    />
+    <span
+      class="absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium"
+      [ngClass]="{
+        'bg-green-500/20 text-green-400': course.difficulty === 'Beginner',
+        'bg-yellow-500/20 text-yellow-400': course.difficulty === 'Intermediate',
+        'bg-orange-500/20 text-orange-400': course.difficulty === 'Advanced',
+        'bg-red-500/20 text-red-400': course.difficulty === 'Expert'
+      }"
+    >
+      {{ course.difficulty }}
+    </span>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-white mb-2">{{ course.title }}</h3>
+    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+      <span>{{ course.duration }}</span>
+      <span>{{ course.price }}</span>
+    </div>
+    <p class="text-gray-400 text-sm mb-6">{{ course.description }}</p>
+    <div class="flex items-center gap-3">
+      <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition flex items-center gap-2">
+        Enroll Now <i class="lucide-chevron-right w-4 h-4"></i>
+      </button>
+      <button class="px-4 py-2 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-500/10 transition">
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
