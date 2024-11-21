@@ -6,14 +6,14 @@ import { Component, Input } from '@angular/core';
 export class CourseComponent {
   @Input() course: any;
   pdfUrl= '';
-  ctf = '../../../assets/pdf/cft.pdf';
+  ctf = '../../../assets/pdf/captureTheFalg.pdf';
   bb = '../../../assets/pdf/bug-bounty.pdf'
-  ehf = '../../../assets/foundation.pdf';
+  foundation = '../../../assets/pdf/foundation-EHF.pdf'
   comple = '../../../assets/pdf/complete.pdf'
   downloadPdf(title:string) {
      // Path to your PDF in the assets folder
     if(title === 'Ethical Hacking Foundations'){
-      this.pdfUrl = this.ehf
+      this.pdfUrl = this.foundation
     }
     else if (title === 'Advanced Bug Bounty Techniques'){
       this.pdfUrl = this.bb
