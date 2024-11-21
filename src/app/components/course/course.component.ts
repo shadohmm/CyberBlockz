@@ -8,7 +8,7 @@ export class CourseComponent {
   pdfUrl= '';
   ctf = '../../../assets/pdf/cft.pdf';
   bb = '../../../assets/pdf/bug-bounty.pdf'
-  ehf = '../../../assets/pdf';
+  ehf = '../../../assets/foundation.pdf';
   comple = '../../../assets/pdf/complete.pdf'
   downloadPdf(title:string) {
      // Path to your PDF in the assets folder
