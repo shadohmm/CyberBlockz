@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   courses = [
     {
       title: "Ethical Hacking Foundations",
       difficulty: "Beginner",
-      duration: "1 month",
+      duration: "50 hours",
       price: "₹2000",
       description: "Comprehensive introduction to ethical hacking principles and fundamental cybersecurity tools.",
       icon: "shield",
@@ -18,7 +18,7 @@ export class HomeComponent {
     {
       title: "Advanced Bug Bounty Techniques",
       difficulty: "Intermediate",
-      duration: "1.5 months",
+      duration: "60 hours",
       price: "₹2500",
       description: "Master advanced vulnerability discovery and responsible disclosure strategies.",
       icon: "shield-alert",
@@ -27,7 +27,7 @@ export class HomeComponent {
     {
       title: "Capture The Flag Masterclass",
       difficulty: "Advanced",
-      duration: "15-20 days",
+      duration: "40 hours",
       price: "₹1500",
       description: "Intensive practical challenges to sharpen your cybersecurity skills and problem-solving.",
       icon: "flag",
@@ -36,9 +36,9 @@ export class HomeComponent {
     {
       title: "Complete Cybersecurity Program",
       difficulty: "Expert",
-      duration: "3 months",
+      duration: "100+ hours",
       price: "₹5000",
-      description: "Comprehensive journey from foundational concepts to advanced defensive and offensive techniques.",
+      description: "A complete journey from beginner to expert, covering foundational concepts to advanced defensive and offensive techniques.",
       icon: "shield",
       image: "../../../assets/images/cyberSecurity.jpeg",
     },
@@ -94,4 +94,27 @@ export class HomeComponent {
     return badgeStyles[difficulty] || '';
   }
 
+  // Wait for the DOM to be fully loaded
+  ngOnInit(): void {
+    // Ensure the code runs only on the client-side (browser)
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      // Wait for the DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        const viewCoursesButton = document.getElementById('viewCoursesButton') as HTMLButtonElement | null;
+
+        if (viewCoursesButton) {
+          viewCoursesButton.addEventListener('click', () => {
+            const coursesSection = document.getElementById('courses') as HTMLElement | null;
+
+            if (coursesSection) {
+              coursesSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        }
+      });
+    }
+  }  
 }
