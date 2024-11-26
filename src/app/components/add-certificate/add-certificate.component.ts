@@ -18,6 +18,8 @@ export class AddCertificateComponent {
   constructor(private verifyCertService:CertVerificationService) { }
 
   ngOnInit(): void {}
+
+  // Simulate API check - replace with actual API call
   verifyId(id: string) {
     let isValid = false;
     if(this.verifyCertService.checkCertIdValid(id)){
@@ -54,24 +56,23 @@ export class AddCertificateComponent {
     console.log("iddd",id);
     let isAdded = false;
     if (this.validateForm()){
-      if(isAdded = this.verifyCertService.addCertId(id)){
-        this.verificationStatus = 'success'
-      }
+      isAdded = this.verifyCertService.addCertId(id);
+      this.verificationStatus = isAdded ? 'success' : 'error';
       setTimeout(() => this.verificationStatus = null, 3000);
 
     }
   }
 
-
+  // Method called when Delete ID is clicked
   deleteId(id: string): void {
     let isDeleted;
     console.log('Deleting ID:', id);
     if(this.validateForm()) {
-      if(isDeleted = this.verifyCertService.deleteCertId(id)){
-        this.verificationStatus = 'error'
-      };
+      isDeleted = this.verifyCertService.deleteCertId(id);
+      this.verificationStatus = !isDeleted ? 'success' : 'error';
       setTimeout(() => this.verificationStatus = null, 3000);
     }
+    // Add logic to delete ID
   }
 
 }
