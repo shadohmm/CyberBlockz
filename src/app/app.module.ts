@@ -9,6 +9,9 @@ import { FeatureComponent } from './components/feature/feature.component';
 import { CourseComponent } from './components/course/course.component';
 import { StatComponent } from './components/stat/stat.component';
 import { LucideAngularModule } from 'lucide-angular';
+import { CertVerificationComponent } from './components/cert-verification/cert-verification.component';
+import { FormsModule } from '@angular/forms';
+import { AddCertificateComponent } from './components/add-certificate/add-certificate.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,14 @@ import { LucideAngularModule } from 'lucide-angular';
     NavComponent,
     FeatureComponent,
     CourseComponent,
-    StatComponent
+    StatComponent,
+    CertVerificationComponent,
+    AddCertificateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

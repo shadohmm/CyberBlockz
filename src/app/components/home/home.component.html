@@ -9,8 +9,8 @@
       </div>
       <ul class="flex items-center gap-8">
         <li><a href="#courses" class="text-gray-300 hover:text-blue-400 transition">Courses</a></li>
-        <li><a class="text-gray-300 hover:text-blue-400 transition">About</a></li>
-        <li><a class="text-gray-300 hover:text-blue-400 transition">Contact</a></li>
+        <li><a href="#courses" class="text-gray-300 hover:text-blue-400 transition">About</a></li>
+        <li><a href="#courses" class="text-gray-300 hover:text-blue-400 transition">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -27,11 +27,11 @@
         </p>
         <div class="flex flex-wrap gap-4">
           <button class="px-8 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
-            Get Started
+           <a href="#courses"> Get Started</a>
           </button>
           <!-- Ensure the button has an id for easier targeting -->
           <button id="viewCoursesButton" class="px-8 py-4 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-500/10 transition">
-            View Courses
+            <a href="#courses">View Courses</a>
           </button>
         </div>
       </div>
@@ -46,7 +46,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Courses section with ID to target for scrolling -->
   <section id="courses" class="py-20">
     <div class="max-w-7xl mx-auto px-6">
@@ -64,4 +64,5 @@
       </div>
     </div>
   </section>
+  <app-cert-verification></app-cert-verification>
 </div>
