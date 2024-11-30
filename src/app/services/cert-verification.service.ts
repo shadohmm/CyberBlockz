@@ -4,7 +4,28 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CertVerificationService {
-  certIds: string[] = ['973d7f9efc06ba81112bceb8205309ff0f49c303c28914a1dcf143d86a1b15b4'];
+  certIds: string[] = [
+    'jdkf8qntoawrzxplmb93',
+    'pqrz8nwojakmlfdxtb93',
+    'lnxprfjotkwzabqm89d3',
+    'mqtnxozlfj8kd9rwabp3',
+    'zpjf8rxntolkmbwqad93',
+    'tnwolqjz8mxrkdabpf93',
+    'nltzfj8rwkopxqmab93d',
+    'xmqfj8ltwnorzakbpd93',
+    'bmlf8rntoxpjwqazkd93',
+    'zpn8ltwrfjokadxmbq93',
+    'blrf8njopxmtzwqkad93',
+    'xmkqntz8rjoawplbfd93',
+    'txjrwolzpnqmfkab8d93',
+    'pbfm8nqtwjrokadzxl93',
+    'mqfzj8xlnortwpabd93k',
+    'nplfr8mxqtwjokzbda93',
+    'txzrnwjlf8opkdqabm93',
+    'blxrz8nfqojmtpwka93d',
+    'pmlxntzrqfj8okbwda93',
+    'jrnltfwqmxzopkabd893'
+  ];
   checkCertIdValid(id: string): boolean {
     return this.certIds.includes(id);
   }

@@ -37,7 +37,7 @@ export class CertVerificationComponent {
     if (!this.formData.id.trim()) {
       this.errors.id = 'ID is required';
       isValid = false;
-    } else if (!/^[a-zA-Z0-9]{64}$/.test(this.formData.id)) {
+    } else if (!/^[a-zA-Z0-9]{20}$/.test(this.formData.id)) {
       this.errors.id = 'ID must be exactly 64 characters';
       isValid = false;
     } else {
